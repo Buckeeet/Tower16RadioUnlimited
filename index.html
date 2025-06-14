@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ARG Terminal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Boot Phase -->
+  <div id="bootup-screen" class="screen">
+    <img src="img/bl.png" alt="Boot Logo" class="logo spin" id="boot-logo"/>
+    <div id="boot-text" class="terminal-text"></div>
+  </div>
+
+  <!-- Login Phase -->
+  <div id="login-screen" class="screen hidden" style="background-image: url('img/lb.png');">
+    <img src="img/ll.png" alt="Login Logo" class="logo"/>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="USER ID" autocomplete="off"/>
+      <input type="password" id="password" placeholder="PASSWORD"/>
+      <button type="submit">ENTER</button>
+    </form>
+  </div>
+
+  <!-- Transition Phase -->
+  <div id="transition-screen" class="screen hidden" style="background: black;">
+    <img src="img/bl.png" alt="Transition Logo" class="logo"/>
+    <p class="red-text">> AUTHORIZED</p>
+  </div>
+
+  <!-- Main UI -->
+  <div id="main-ui" class="screen hidden" style="background-image: url('img/tb.png');">
+    <img src="img/tl.png" alt="Main Logo" class="logo"/>
+    <p class="terminal-text">> WELCOME, OPERATIVE</p>
+    <input type="text" id="command-input" placeholder="Enter command..."/>
+    <div id="output"></div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="vhs-loop" src="audio/vhs-loop.mp3" loop autoplay></audio>
+  <audio id="bootup-sound" src="audio/ps1.mp3"></audio>
+  <audio id="login-success" src="audio/tada.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
